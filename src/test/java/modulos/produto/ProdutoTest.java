@@ -6,15 +6,8 @@ import io.restassured.http.ContentType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import pojo.ComponentePojo;
-import pojo.ProdutoPojo;
-import pojo.UsuarioPojo;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import static io.restassured.RestAssured.*;//ajuda a economizar na escrita pois o sistema ja vai entender que não preciso ficar colocando RestAssured.Algumacolasse e vai colocar só AlgumaClasse
-import static io.restassured.matcher.RestAssuredMatchers.*;
+import static io.restassured.RestAssured.*;//ajuda a economizar na escrita pois o sistema ja vai entender que não preciso ficar colocando RestAssured.Alguma cllasse e vai colocar só Alguma Classe
 import static org.hamcrest.Matchers.*;
 
 @DisplayName("Testes de API rest do módulo de produto")
@@ -25,7 +18,6 @@ public class ProdutoTest {
         public void beforeEach(){
                 //Configurando os dados da API Rest da lojinha
                 baseURI = "http://165.227.93.41";
-                // port = 8080;
                 basePath = "/lojinha-bugada";
 
 
@@ -46,7 +38,6 @@ public class ProdutoTest {
         public void testValidarLimitesZeradoProibidoValorProduto() {
 
                 //Tentar inserir um produto com valor 0.00 e validar que a mensagem de erro foi apresentada
-                // status code retornado foi 422
 
                 given()
                         .contentType(ContentType.JSON)
